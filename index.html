@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navgurukul</title>
+  <meta name="author" content="Abhisek Sharma">
+  <meta name="description" content="Navgurukul Home page clone Projects">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+  <style>
+    /* Additional CSS */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #333; /* Dark background color for the header */
+  color: #fff; /* White text color for the header */
+  padding: 10px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+}
+
+.nav-menu li:last-child {
+  margin-right: 0;
+}
+
+.nav-menu li a {
+  color: #fff; /* White text color for menu items */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffc107; /* Change text color on hover */
+}
+
+/* Thumbnails container */
+.thumbnails-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  flex: 1;
+  max-width: 200px;
+  margin: 0 10px 20px; /* Added some bottom margin for spacing */
+  text-align: center; /* Center align the content */
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Footer styles */
+.footer {
+  background-color: #000000; /* Dark background color for the footer */
+  color: #fff; /* White text color for the footer */
+  padding: 20px 0;
+  text-align: center; /* Center align the content */
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links li a {
+  color: #fff; /* White text color for footer links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #ffc107; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding: 0 10px; /* Reduce padding for smaller screens */
+  }
+
+  .nav-menu li {
+    margin-right: 10px; /* Reduce margin for smaller screens */
+  }
+
+  .thumbnail {
+    max-width: calc(50% - 20px); /* Make thumbnails 50% width with some margin in between */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav-logo {
+    font-size: 20px; /* Reduce font size for smaller screens */
+  }
+
+  .nav-menu {
+    flex-direction: column; /* Stack menu items vertically on smaller screens */
+    align-items: flex-start; /* Align menu items to the start on smaller screens */
+  }
+
+  .nav-menu li {
+    margin-right: 0; /* Remove right margin for menu items */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
+  }
+
+  .thumbnail {
+    max-width: 100%; /* Make thumbnails full width on smaller screens */
+  }
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">Navgurukul</a>
+        <ul class="nav-menu">
+          <li><a href="#" onclick="showHomePage()">Home</a></li>
+          <li><a href="#" onclick="showResponsibility('Discipline Coordinator')">Discipline Coordinator</a></li>
+          <li><a href="#" onclick="showResponsibility('Facility Maintenance')">Facility Maintenance</a></li>
+          <li><a href="#" onclick="showResponsibility('Training And Placement Coordinator')">Training And Placement Coordinator</a></li>
+          <li><a href="#" onclick="showResponsibility('Recreation Coordinator')">Recreation Coordinator</a></li>
+          <li><a href="#" onclick="showResponsibility('Health Coordinator')">Health Coordinator</a></li>
+          <li><a href="#" onclick="showResponsibility('Outreach Coordinator')">Outreach Coordinator</a></li>
+          <li><a href="#" onclick="showResponsibility('Culture Coordinator')">Culture Coordinator</a></li>
+          <li class="search-icons"><a href="#"><i class="fas fa-search" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="thumbnails-container">
+    <a href="#" class="thumbnail"><img src="data:image/png;base64,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" alt="Navgurukul"></a>
+    <a href="#" class="thumbnail"><img src="img/Abhishek.png" alt="Abhisek"></a>
+    <a href="#" class="thumbnail"><img src="img/Navgurukul.jpg" alt="Navgurukul"></a>
+    <a href="#" class="thumbnail"><img src="img/Navgurkul1.jpg" alt="Responsibility"></a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-wrapper">
+      <section class="footer-wrapper-container">
+        <p class="info">
+          Navgurukul <a href="#">Dharamshala Campus</a> Boy Campus <a href="#">Coding Environment</a>, or find a
+          <a href="#">Opportunity</a>.
+        </p>
+        <ul class="footer-links">
+          <li class="first-footer-link"><a href="#">Site map</a></li>
+          <li><a href="#">Coding</a></li>
+          <li><a href="#">Tech</a></li>
+          <li><a href="#">Privileged Student</a></li>
+          <li><a href="#">Environment</a></li>
+          <li><a href="#">Job Opportunities</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#"><img src="img/symbol.png" alt="Navgurukul Symbol"></a></li>
+        </ul>
+      </section>
+      <section>
+        <p class="copyright">
+          Copyright © 2024 Navgurukul Inc. All rights reserved.
+          <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+        </p>
+      </section>
+    </div>
+  </footer>
+
+  <script>
+    function showResponsibility(coordinator) {
+      var thumbnailsContainer = document.querySelector('.thumbnails-container');
+      var content = '';
+
+      switch (coordinator) {
+        case 'Facility Maintenance':
+          content = `
+            <p><strong>Facility Maintenance Responsibilities:</strong></p>
+            <ul>
+              <li>Coordinating for providing facilities related to electricity, wifi, and drinking water on the campus</li>
+              <li>Call and Follow-ups for repair and maintenance</li>
+              <li>Negotiating with vendors for the most economical solutions</li>
+              <li>Keeping a record of all repair and maintenance</li>
+              <li>Keeping a record of all relevant bills</li>
+              <li>Coordinate to upload the bills on the payment dashboard</li>
+            </ul>
+          `;
+          break;
+
+        case 'Outreach Coordinator':
+          content = `
+            <p><strong>Outreach Coordinator Responsibilities:</strong></p>
+            <ul>
+              <li>Click pictures pertaining to different activities and store them in a centralized location accessible to all the members</li>
+              <li>Acting as the central point of communication between the Center, volunteers, and community members</li>
+              <li>To maintain a campus-specific blog</li>
+              <li>Create attractive flyers, and posts for social media platforms</li>
+              <li>Coordinate with the social media team for regular and timely updates on the social media platforms</li>
+              <li>Keep a record of all relevant photos and videos</li>
+              <li>Write catchy and informative descriptions for each social media post</li>
+            </ul>
+          `;
+          break;
+        
+          case 'Discipline Coordinator':
+        content = `
+          <p><strong>Discipline Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>Ensure that all rules & regulations are laid out clearly through the use of posters. Ensure that each student has signed a copy of the rules and regulations to be followed</li>
+            <li>Ensure the whole campus runs smoothly and students follow the campus rules religiously.</li>
+            <li>Ensure that all students attend classes and meetings on time.</li>
+            <li>Ensure that no student is in their rooms at the time of the academic hour, except for genuine cases (sickness with approval from the team)</li>
+            <li>Coordinate for ensuring discipline while external visits to the campus</li>
+            <li>Consulting with the council and coming up with a time schedule for the day. This includes class times, meal times, morning and evening circles, and work time</li>
+            <li>Addressing any violation or rule or any misconduct by any student and taking appropriate action</li>
+            <li>Maintaining a public record of all cases where disciplinary action was taken</li>
+            <li>Conducting elections on campus every 45 days along with the laptops reallocation, beds and rooms will be reallocated randomly among the students</li>
+          </ul>
+        `;
+        break;
+
+      case 'Kitchen Coordinator':
+        content = `
+          <p><strong>Kitchen Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>Assigning the kitchen and cleaning duties equally and impartially among the students</li>
+            <li>Deciding the time for the meal breaks</li>
+            <li>Make sure that food is being served during break time only</li>
+            <li>Creating the menu with the help of the members who have kitchen duty</li>
+            <li>Assigning duties for planning and buying groceries and other raw materials for food</li>
+            <li>Creating cleaning schedules (campus and kitchen)</li>
+            <li>Addressing and resolving any complaints and grievances raised by the members regarding food</li>
+            <li>Any other kitchen and the food-related issue will be solved by the food and hygiene committee</li>
+            <li>Documenting all such decisions on the appropriate communication channel</li>
+          </ul>
+        `;
+        break;
+
+      case 'Information and Technology Coordinator':
+        content = `
+          <p><strong>Information and Technology Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>To take care of NavGurukul laptops that are not assigned to anyone</li>
+            <li>Devise and document a method to maintain the inventory of laptops and allotment of laptops to new students</li>
+            <li>To reallocate the laptops to the students in a randomized manner every 45 days with course-appropriate constraints (e.g. Android students to get first access to 8GB+, iOS students to get first access to MacBooks)</li>
+            <li>To oversee and assess any laptop repairs</li>
+            <li>To resolve internet issues: assess the problems, collect data, find solutions and execute them</li>
+            <li>Documenting all such decisions on the appropriate communication channel</li>
+          </ul>
+        `;
+        break;
+
+      case 'Health Coordinator':
+        content = `
+          <p><strong>Health Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>To make sure students stay fit and healthy on the campus</li>
+            <li>To coordinate for vehicle/cab in case of severe or fatal medical emergencies</li>
+            <li>In case of common medical conditions like cough, fever, headache, or vomit, make sure that the medicines are available for students</li>
+          </ul>
+        `;
+        break;
+
+      case 'Recreation Coordinator':
+        content = `
+          <p><strong>Recreation Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>Organize recreational activities (games, yoga, fun activities) on the campus</li>
+            <li>Ensure maximum students’ participation</li>
+            <li>Facilitate connecting mind, body, and soul activities</li>
+          </ul>
+        `;
+        break;
+
+      case 'Culture Coordinator':
+        content = `
+          <p><strong>Cultural Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>Organizing celebration of festivals on campus with a spirit of giving</li>
+            <li>Organizing various clubs or interest groups such that students can participate and learn from these on a long-term basis</li>
+            <li>Organize events where students get an opportunity to come together and engage in other activities of interest</li>
+          </ul>
+        `;
+        break;
+
+      case 'Training And Placement Coordinator':
+        content = `
+          <p><strong>Training and Placement Coordinator Responsibilities:</strong></p>
+          <ul>
+            <li>Providing assistance to students to apply for internships and jobs</li>
+            <li>Corresponding with companies for recruitment and internships</li>
+            <li>Organizing interview readiness sessions for students such as resume writing and mock interviews</li>
+            <li>Coordinating all activities related to training and placement such as but not limited to inviting companies for interviews, arranging interviews, ensuring that the students are behaving responsibly with the job offers and the companies such that companies have a favorable experience with NavGurukul</li>
+          </ul>
+        `;
+        break;
+
+      default:
+        content = '<p>No responsibilities found for this coordinator.</p>';
+        break;
+      }
+
+      thumbnailsContainer.innerHTML = content;
+    }
+
+    function showHomePage() {
+      var thumbnailsContainer = document.querySelector('.thumbnails-container');
+      thumbnailsContainer.innerHTML = `
+        <a href="#" class="thumbnail"><img src="img/Logo.png" alt="Navgurukul"></a>
+        <a href="#" class="thumbnail"><img src="img/Abhishek.png" alt="Abhisek"></a>
+        <a href="#" class="thumbnail"><img src="img/Navgurukul.jpg" alt="Navgurukul"></a>
+        <a href="#" class="thumbnail"><img src="img/Navgurkul1.jpg" alt="Responsibility"></a>
+      `;
+    }
+  </script>
+</body>
+</html>
